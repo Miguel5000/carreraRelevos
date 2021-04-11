@@ -11,9 +11,9 @@ package co.edu.ucundinamarca.juego;
  */
 public class Pantalla {
 
-    private Participante[] participantes;
+    private Participante[][] participantes;
     
-    public Pantalla(Participante[] participantes) {
+    public Pantalla(Participante[][] participantes) {
         
         this.participantes = participantes;
         
@@ -43,10 +43,10 @@ public class Pantalla {
             
             for(byte numParticipante = 1; numParticipante <= 3; numParticipante++){
                 
-                StringBuilder filaParaModificar = new StringBuilder(progresoFilas[numZona]);
-                filaParaModificar.setCharAt(participantes[(numZona-1)*3+numParticipante].getPosicion(), participantes[(numZona-1)*3+numParticipante].getEquipo().getSimbolo());
+                StringBuilder filaParaModificar = new StringBuilder(progresoFilas[numZona-1]);
+                filaParaModificar.setCharAt(participantes[numZona-1][numParticipante-1].getPosicion()-1, participantes[numZona-1][numParticipante-1].getEquipo().getSimbolo());
                 
-                progresoFilas[numZona] = filaParaModificar.toString();
+                progresoFilas[numZona-1] = filaParaModificar.toString();
                 
             }
             

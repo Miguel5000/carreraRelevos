@@ -44,26 +44,45 @@ public class Participante extends Thread{
         
     }
     
-    public synchronized void correr(){
+    public void correr(){
         
         try {
-            this.testigo.wait();
+        
+            synchronized(this.testigo){
+
+                this.testigo.wait();
+
+            }
+
+            byte velocidad = (byte)(Math.random()*3+1);
+
+            while(this.getPosicion() < posicionFinal){
+
+                Thread.sleep(1000);
+
+
+                if(this.getPosicion() + velocidad > posicionFinal)
+                    this.posicion = posicionFinal;
+                else
+                    this.posicion += velocidad;
+
+            }
+
+            if(this.numParticipante == 3){
+
+                System.out.println("¡¡¡El " + this.equipo.getNombre() +  " es el ganador!!!");
+
+            }
+
+            synchronized(this.testigo){
+
+                this.testigo.notify();
+
+            }
+        
         } catch (InterruptedException ex) {
-            Logger.getLogger(Participante.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("El " + this.equipo.getNombre() + " lamenta su derrota");
         }
-        
-        byte velocidad = (byte)(Math.random()*3+1);
-        
-        while(this.getPosicion() < posicionFinal){
-            
-            if(this.getPosicion() + velocidad > posicionFinal)
-                this.posicion = posicionFinal;
-            else
-                this.posicion += velocidad;
-              
-        }
-        
-        this.testigo.notify();
         
     }
     

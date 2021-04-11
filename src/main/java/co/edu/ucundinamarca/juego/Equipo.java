@@ -32,7 +32,5 @@ public class Equipo {
     public char getSimbolo() {
         return simbolo;
     }
-    
-    
 
 }
