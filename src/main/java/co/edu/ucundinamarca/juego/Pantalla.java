@@ -6,23 +6,37 @@
 package co.edu.ucundinamarca.juego;
 
 /**
- *
- * @author Miguel
+ * Clase que permite mostrar el progreso de cada participante en la carrera
+ * @author Miguel Ángel Manrique Téllez
+ * @since 1.0.0
+ * @version 1.0.0
  */
 public class Pantalla {
 
+    /**
+     * Es la matriz que posee a los participantes de la carrera de relevos
+     */
     private Participante[][] participantes;
     
+    
+    /**
+     * Constructor que inicializa a la pantalla para que tenga los datos necesarios para mostrar el progreso
+     * @param participantes matriz que posee a los participantes de la carrera
+     */
     public Pantalla(Participante[][] participantes) {
         
         this.participantes = participantes;
         
     }
     
+    /**
+     * Imprime gráficamente por consola la carrera de relevos
+     */
     public void mostrarProgreso(){
         
         String[] progresoFilas = new String[3];
        
+        //A cada cadena del arreglo, le asigna todas las posiciones con el carácter de espacio
         for(byte fila = 0; fila < progresoFilas.length; fila++){
             
             String progresoFila = "";
@@ -39,6 +53,7 @@ public class Pantalla {
             
         }
         
+        //Reemplaza la posición de cada cadena en la que está el participante con un símbolo que lo representa
         for(byte numZona = 1; numZona <= 3; numZona++){
             
             for(byte numParticipante = 1; numParticipante <= 3; numParticipante++){

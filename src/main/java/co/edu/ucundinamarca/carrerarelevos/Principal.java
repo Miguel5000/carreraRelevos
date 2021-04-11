@@ -12,23 +12,33 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Miguel
+ * Clase encargada de iniciar la aplicación
+ * @author Miguel Ángel Manrique Téllez
+ * @since 1.0.0
+ * @version 1.0.0
  */
 public class Principal {
 
+    /**
+     * Constructor que ejecuta las instrucciones iniciales de la aplicación
+     */
     public Principal() {
         
         iniciar();
         
     }
-    
+    /**
+     * Método de entrada de la aplicación
+     * @param args variable que recibe las variables de inicio de la aplicación para conectarla con operaciones del S.O como por ejemplo al abrir un archivo con esta aplicación
+     */
     public static void main(String[] args) {
         
         new Principal();
         
     }
-    
+    /**
+     * Método que posee la lógica principal de la aplicación
+     */
     private void iniciar(){
         
         Equipo equipo1 = new Equipo("Equipo 1", 'x');
@@ -64,7 +74,7 @@ public class Principal {
             for(byte columna = 0; columna < participantes[fila].length; columna++){
             
                 participantes[fila][columna].start();
-            
+                
             }
             
         }

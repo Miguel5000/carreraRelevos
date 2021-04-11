@@ -6,13 +6,26 @@
 package co.edu.ucundinamarca.juego;
 
 /**
- *
- * @author Miguel
+ * Clase que posee los datos del campo de juego
+ * @author Miguel Ángel Manrique Téllez
+ * @since 1.0.0
+ * @version 1.0.0
  */
 public class CampoDeJuego {
     
+    /**
+     * Es la longitud del campo de juego
+     */
     public static byte LONGITUD = 30;
+    
+    /**
+     * Es la posición final de la zona del primer participante de un equipo
+     */
     public static byte POSICION_FINAL_ZONA1 = 10;
+    
+    /**
+     * Es la posición final de la zona del segundo participante de un equipo
+     */
     public static byte POSICION_FINAL_ZONA2 = 20;
     
 }

@@ -6,28 +6,44 @@
 package co.edu.ucundinamarca.juego;
 
 /**
- *
- * @author Miguel
+ * Clase que permite crear equipos para la carrera de relevos
+ * @author Miguel Ángel Manrique Téllez
+ * @since 1.0.0
+ * @version 1.0.0
  */
 public class Equipo {
  
+    /**
+     * Es el nombre del equipo para la carrera
+     */
     private String nombre;
+    
+    /**
+     * Es el símbolo que representa a los jugadores del equipo en la pantalla
+     */
     private char simbolo;
 
+    /**
+     * Constructor que inicializa el equipo
+     * @param nombre variable que tiene el nombre del equipo
+     * @param simbolo variable que tiene el símbolo que representa al equipo
+     */
     public Equipo(String nombre, char simbolo) {
         this.nombre = nombre;
         this.simbolo = simbolo;
     }
 
     /**
-     * @return the nombre
+     * Retorna el nombre del equipo
+     * @return nombre
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @return the simbolo
+     * Retorna el símbolo que representa al equipo
+     * @return simbolo
      */
     public char getSimbolo() {
         return simbolo;

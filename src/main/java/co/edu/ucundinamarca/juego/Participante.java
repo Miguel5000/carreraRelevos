@@ -9,17 +9,45 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Miguel
+ * Clase encargada de manejar todo lo referente a los participantes de la carrera de relevos
+ * @author Miguel Ángel Manrique Téllez
+ * @since 1.0.0
+ * @version 1.0.0
  */
 public class Participante extends Thread{
 
+    
+    /**
+     * Es el número que le da orden al participante en la carrera con respecto a su equipo
+     */
     private byte numParticipante;
+    
+    /**
+     * Es el objeto que representa al testigo en la carrera de relevos
+     */
     private Object testigo;
+    
+    /**
+     * Es la posición que tiene el participante en el campo de juego
+     */
     private byte posicion;
+    
+    /**
+     * Es la posición a la que debe llegar el participante en el campo de juego
+     */
     private byte posicionFinal;
+    
+    /**
+     * Es el equipo al que pertenece el participante
+     */
     private Equipo equipo;
 
+    /**
+     * Constructor que inicializa al participante
+     * @param testigo variable que representa el testigo en la carrera
+     * @param equipo variable que indica el equipo del participante
+     * @param numParticipante variable que indica el orden del participante en su equipo
+     */
     public Participante(Object testigo, Equipo equipo, byte numParticipante) {
         
         this.testigo = testigo;
@@ -44,6 +72,9 @@ public class Participante extends Thread{
         
     }
     
+    /**
+     * Se encarga de hacer que el participante se mueva una vez posee el testigo
+     */
     public void correr(){
         
         try {
@@ -86,6 +117,9 @@ public class Participante extends Thread{
         
     }
     
+    /**
+     * Inicia la ejecución del hilo
+     */
     @Override
     public void run() {
         
@@ -96,14 +130,16 @@ public class Participante extends Thread{
     }
 
     /**
-     * @return the posicion
+     * Retorna la posición que tiene el participante en el campo de juego
+     * @return posicion
      */
     public byte getPosicion() {
         return posicion;
     }
 
     /**
-     * @return the equipo
+     * Retorna el equipo al que pertenece el participante
+     * @return equipo
      */
     public Equipo getEquipo() {
         return equipo;
